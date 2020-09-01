@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Catan</title>
+		<link rel="stylesheet" type="text/css" href="catan.css">
+	</head>
+	<body>
+		<div id="header"></div>
+		<div  >
+			<form name="building">
+				<div>
+					<button name="buildRoad">Carretera</button>
+					<button name="buildTown">Pueblo</button>
+					<button name="buildCity">Ciudad</button>
+					<button name="buildCard">Carta</button>
+					<button name="endTurn">Terminar turno</button>
+				</div>
+			</form>
+		</div>
+		<div >
+			<form name="trading" >
+				<div>
+					<label>Mineral:<input type="number" name="ore"></label>
+					<label>Madera:<input type="number" name="wood"></label>
+					<label>Lana:<input type="number" name="wool"></label>
+					<label>Trigo:<input type="number" name="grain"></label>
+					<label>Ladrillo:<input type="number" name="brick"></label>
+				</div>
+
+				<div>
+					<button name="offer" type="button">Aceptar oferta</button>
+					<button name="cancel" type="button">Cancelar oferta</button>
+				</div>
+
+				<div>
+					<button name="accept0" type="button">Aceptar oferta del jugador 0</button>
+					<button name="accept1" type="button">Aceptar oferta del jugador 1</button>
+					<button name="accept2" type="button">Aceptar oferta del jugador 2</button>
+					<button name="accept3" type="button">Aceptar oferta del jugador 3</button>
+				</div>
+			</form>
+		</div>
+
+		<div id="discard-modal" class="modal">
+			<div class="modal-content">
+				<form name="discard">
+					<h2 id="discard-amount">Descartar</h2>
+					<div>
+						<label>Mineral:<input type="number" name="ore"></input></label><br>
+						<label>Madera:<input type="number" name="wood"></input></label><br>
+						<label>Lana:<input type="number" name="wool"></input></label><br>
+						<label>Trigo:<input type="number" name="grain"></input></label><br>
+						<label>Ladrillo:<input type="number" name="brick"></input></label><br>
+					</div>
+					<button type="button" name="discard">Descartar</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="container">
+			<canvas id="canvas"></canvas>
+
+			<div class="chat" id="chat-container">
+				<h2>Chat</h2>
+				<div class="chat-contents" id="chat-contents"></div>
+				<form name="chat" id="chat-form">
+					<input type="text" name="message" autocomplete="off">
+					<button>Enviar</button>
+				</form>
+			</div>
+		</div>
+		
+		
+			
+		<div id="costs-table">
+			<table>
+				<thead>
+					<tr>
+						<th>Construcciones</th>
+						<th>Coste</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Pueblo</td>
+						<td>1 Ladrillo, 1 Lana, 1 Trigo, 1 Madera</td>
+					</tr>
+					<tr>
+						<td>Ciudad</td>
+						<td>3 Mineral, 2 Trigo</td>
+					</tr>
+					<tr>
+						<td>Carretera</td>
+						<td>1 Ladrillo, 1 Madera</td>
+					</tr>
+					<tr>
+						<td>Carta de desarrollo</td>
+						<td>1 Mineral, 1 Lana, 1 Trigo</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div id="yop-modal" class="modal">
+			<div class="modal-content">
+				<form name="yop">
+					<h2 id="yop-title">Elige 2 recursos</h2>
+					<select name="choice1" id="yop-choice-1">
+						<option value="1">Mineral</option>
+						<option value="2">Madera</option>
+						<option value="3">Lana</option>
+						<option value="4">Trigo</option>
+						<option value="5">Ladrillo</option>
+					</select>
+					<select name="choice2" id="yop-choice-2">
+						<option value="1">Mineral</option>
+						<option value="2">Madera</option>
+						<option value="3">Lana</option>
+						<option value="4">Trigo</option>
+						<option value="5">Ladrillo</option>
+					</select>
+					<button type="button" name="yop-btn" id="yop-btn">Elegir</button>
+				</form>
+			</div>
+		</div>
+		
+		<div id="monopoly-modal" class="modal">
+			<div class="modal-content">
+				<form name="monopoly">
+					<h2 id="monopoly-title">Elige 1 recurso</h2>
+					<select name="choice" id="monopoly-choice">
+						<option value="1">Mineral</option>
+						<option value="2">Madera</option>
+						<option value="3">Lana</option>
+						<option value="4">Trigo</option>
+						<option value="5">Ladrillo</option>
+					</select>
+					<button type="button" name="monopoly-btn" id="monopoly-btn">Elegir</button>
+				</form>
+			</div>
+		</div>
+ 
+		<script src="js/bundle.js"></script>
+	</body>
+</html>
